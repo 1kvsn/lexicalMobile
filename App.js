@@ -39,29 +39,29 @@ const WebViewContainer = ({json}) => {
   `;
 
 
-  // const injectSetJSON = `window.__kvsn.setJSON({"type":"setJSON","data":{"root":{"children":[{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"This is first post of this feed.","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1}],"direction":"ltr","format":"","indent":0,"type":"root","version":1}}})
+  // const injectSetJSON = `window.__torum.setJSON({"type":"setJSON","data":{"root":{"children":[{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"This is first post of this feed.","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1}],"direction":"ltr","format":"","indent":0,"type":"root","version":1}}})
   // true;`;
 
 
-  // window.ReactNativeWebView.postMessage(JSON.stringify(window.__kvsn))
+  // window.ReactNativeWebView.postMessage(JSON.stringify(window.__torum))
   // window.postMessage('sasikant')
-  // window.__kvsn.exportJSON()
+  // window.__torum.exportJSON()
 
   // https://github.com/react-native-webview/react-native-webview/blob/master/docs/Guide.md#the-injectjavascript-method
   // React.useEffect(() => {
   //   setTimeout(() => {
-  //     webviewRef.current?.injectJavaScript('window.__kvsn.setJSON()');
+  //     webviewRef.current?.injectJavaScript('window.__torum.setJSON()');
   //   }, 2000)
   // }, []);
 
   // const jsCode = `
   //   (function(){
-  //       window.__kvsn.setJSON()
+  //       window.__torum.setJSON()
   //   })()`;
 
   const jsCode = `
     try {
-       window.__kvsn.setJSON()
+       window.__torum.setJSON()
     } catch (e) {
       window.ReactNativeWebView.postMessage(JSON.stringify({error: 'setJSON did not fire'}));
       true;
